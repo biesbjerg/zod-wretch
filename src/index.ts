@@ -3,7 +3,7 @@ import { ZodSchema, z } from "zod";
 
 interface ZodAddon {
   jsonSchema: <T, C extends ZodAddon, R, SchemaType extends ZodSchema>(
-    this: T & WretchResponseChain<T, C, R>,
+    this: C & WretchResponseChain<T, C, R>,
     schema: SchemaType,
   ) => Promise<z.infer<SchemaType>>;
 }
